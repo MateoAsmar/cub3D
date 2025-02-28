@@ -12,10 +12,6 @@
 
 #include "../../header/cub3d.h"
 
-/*
-** A small helper to initialize or reset common 
-** ray fields for each vertical stripe.
-*/
 void	init_ray_params(t_game *game, t_ray *ray, int x)
 {
 	ray->camera_x = 2 * x / (double)game->screen_width - 1;
@@ -27,10 +23,6 @@ void	init_ray_params(t_game *game, t_ray *ray, int x)
 	ray->delta_dist_y = fabs(1.0 / ray->ray_dir_y);
 }
 
-/*
-** Determine step and initial side_dist for the DDA algorithm, splitting out
-** the logic so raycast() stays under 25 lines.
-*/
 void	set_step_and_side_dist(t_game *game, t_ray *ray)
 {
 	if (ray->ray_dir_x < 0)
@@ -59,10 +51,6 @@ void	set_step_and_side_dist(t_game *game, t_ray *ray)
 	}
 }
 
-/*
-** Perform the core DDA loop until we hit a wall ('1').
-** This also sets ray->side = 0/1 depending on which axis we stepped along.
-*/
 void	perform_dda(t_game *game, t_ray *ray)
 {
 	ray->hit = 0;
@@ -85,9 +73,6 @@ void	perform_dda(t_game *game, t_ray *ray)
 	}
 }
 
-/*
-** Calculate the distance to the wall and the portion of the screen to draw.
-*/
 void	calc_line_placement(t_game *game, t_ray *ray)
 {
 	if (ray->side == 0)
@@ -105,9 +90,6 @@ void	calc_line_placement(t_game *game, t_ray *ray)
 		ray->draw_end = game->screen_height - 1;
 }
 
-/*
-** Choose which texture index to use, removing the forbidden ternary.
-*/
 void	pick_texture_num(t_ray *ray)
 {
 	if (ray->side == 0)

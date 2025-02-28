@@ -12,10 +12,6 @@
 
 #include "../../header/cub3d.h"
 
-/*
-** Helper: sets up ray->wall_x, ray->tex_x, ray->step, and ray->tex_pos.
-** That way draw_vertical_stripe can remain small. 
-*/
 void	setup_texture_coords(t_game *game, t_ray *ray)
 {
 	if (ray->side == 0)
@@ -35,10 +31,6 @@ void	setup_texture_coords(t_game *game, t_ray *ray)
 			+ ray->line_height / 2) * ray->step;
 }
 
-/*
-** Draws the vertical stripe from draw_start to draw_end in the current column.
-** We rely on setup_texture_coords to reduce line count here.
-*/
 void	draw_texture_column(t_game *game, t_ray *ray, int x)
 {
 	int	y;
@@ -59,21 +51,12 @@ void	draw_texture_column(t_game *game, t_ray *ray, int x)
 	}
 }
 
-/*
-** This replaces your original draw_vertical_stripe(...) which was too large.
-** 1) Call setup_texture_coords for calculation
-** 2) Call draw_texture_column for the loop
-*/
 void	draw_vertical_stripe(t_game *game, t_ray *ray, int x)
 {
 	setup_texture_coords(game, ray);
 	draw_texture_column(game, ray, x);
 }
 
-/*
-** Main raycast function, now well under 25 lines, calling helper functions
-** for the different parts of the logic (initialization, DDA, line calc, etc.).
-*/
 void	raycast(t_game *game)
 {
 	t_ray	ray;
@@ -93,10 +76,6 @@ void	raycast(t_game *game)
 	mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
 }
 
-/*
-** Unchanged function: draws the background. If it's under 25 lines and uses no
-** forbidden constructs, you can keep it as-is.
-*/
 void	draw_background(t_game *game)
 {
 	int	x;

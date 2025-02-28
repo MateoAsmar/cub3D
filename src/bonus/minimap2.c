@@ -31,11 +31,6 @@ static void	process_minimap_pixel(t_game *game, t_mmap m, int x, int y)
 		my_mlx_pixel_put(&game->img, m.off_x + x, m.off_y + y, 0xFFFFFF);
 }
 
-/*
-** draw_minimap_bg():
-**   Draws the "walls/spaces" background onto the minimap.
-**   Remains under 25 lines and has minimal local vars.
-*/
 void	draw_minimap_bg(t_game *game, t_mmap m)
 {
 	int		x;
@@ -56,11 +51,6 @@ void	draw_minimap_bg(t_game *game, t_mmap m)
 	}
 }
 
-/*
-** draw_player_on_minimap():
-**   Draws the player's 5x5 red square, plus a line for facing direction.
-**   No ternaries, no more than 5 or 6 local vars. 
-*/
 void	draw_player_on_minimap(t_game *game, t_mmap m)
 {
 	t_point	player_pos;
@@ -87,13 +77,6 @@ void	draw_player_on_minimap(t_game *game, t_mmap m)
 	draw_line(game, player_pos, dir_end, 0xFF0000);
 }
 
-/*
-** draw_minimap():
-**   Ties everything together. 
-**   - Each function stays under 25 lines. 
-**   - We group local vars in 't_mmap' to avoid TOO_MANY_VARS_FUNC. 
-**   - No forbidden for-loops or ternaries.
-*/
 void	draw_minimap(t_game *game)
 {
 	t_mmap	m;

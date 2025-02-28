@@ -45,9 +45,6 @@ int	init_game(t_game *game)
 	return (1);
 }
 
-/*
-** Set player.dir_x / dir_y based on 'N','S','E','W'.
-*/
 static void	set_player_direction(t_game *game, char dir)
 {
 	if (dir == 'E')
@@ -64,9 +61,6 @@ static void	set_player_direction(t_game *game, char dir)
 		game->player.dir_y = 0;
 }
 
-/*
-** Set player.plane_x / plane_y based on 'N','S','E','W'.
-*/
 static void	set_player_plane(t_game *game, char dir)
 {
 	if (dir == 'N')
@@ -83,10 +77,6 @@ static void	set_player_plane(t_game *game, char dir)
 		game->player.plane_y = 0;
 }
 
-/*
-** Find player start position (N/S/E/W) in the map, set pos/direction/plane.
-** Keeps line count < 25 by delegating direction/plane setup to helpers.
-*/
 void	init_player(t_game *game)
 {
 	int		x;

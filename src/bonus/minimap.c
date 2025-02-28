@@ -12,12 +12,6 @@
 
 #include "../../header/cub3d.h"
 
-/*
-** init_linevars():
-**   Helper to initialize dx, dy, sx, sy, and err for Bresenham's line.
-**   Splitting it out ensures we keep draw_line() itself under 25 lines
-**   and avoid excessive local variables.
-*/
 void	init_linevars(t_linevars *v, t_point start, t_point end)
 {
 	v->x = start.x;
@@ -39,13 +33,6 @@ void	init_linevars(t_linevars *v, t_point start, t_point end)
 	v->err = v->dx - v->dy;
 }
 
-/*
-** draw_line():
-**   Draws a line using Bresenham's algorithm.
-**   - No ternaries
-**   - 4 arguments: (t_game*, t_point, t_point, color)
-**   - Well under 25 lines thanks to the init_linevars() helper.
-*/
 void	draw_line(t_game *game, t_point start, t_point end, int color)
 {
 	t_linevars	v;
@@ -70,11 +57,6 @@ void	draw_line(t_game *game, t_point start, t_point end, int color)
 	}
 }
 
-/*
-** get_map_height():
-**   Returns how many rows your map has (null-terminated char**).
-**   This function is small enough to stay under 25 lines & minimal locals.
-*/
 int	get_map_height(char **map)
 {
 	int	rows;
