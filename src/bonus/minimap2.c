@@ -6,7 +6,7 @@
 /*   By: masmar <masmar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:33:22 by masmar            #+#    #+#             */
-/*   Updated: 2025/02/26 14:19:24 by masmar           ###   ########.fr       */
+/*   Updated: 2025/03/03 10:49:08 by masmar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void	draw_player_on_minimap(t_game *game, t_mmap m)
 		}
 		py++;
 	}
-	dir_end.x = player_pos.x + (int)(game->player.dir_x * 10);
-	dir_end.y = player_pos.y + (int)(game->player.dir_y * 10);
+	dir_end.x = player_pos.x + (int)(game->player.dir_x * 7);
+	dir_end.y = player_pos.y + (int)(game->player.dir_y * 7);
 	draw_line(game, player_pos, dir_end, 0xFF0000);
 }
 

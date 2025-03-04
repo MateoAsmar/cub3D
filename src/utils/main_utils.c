@@ -6,7 +6,7 @@
 /*   By: masmar <masmar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:06:21 by masmar            #+#    #+#             */
-/*   Updated: 2025/02/27 16:30:22 by masmar           ###   ########.fr       */
+/*   Updated: 2025/03/03 10:50:33 by masmar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	validate_arguments(int argc, char **argv)
 		return (cerrorp("Usage: ./cub3d <map.cub>"));
 	if (verify_file_extension(argv[1], ".cub") == -1)
 		return (cerrorp
-			("Invalid extension: Only .cub files are acceptable."));
+			("Invalid Extension: Only .cub Files Are Acceptable."));
 	return (0);
 }
 
@@ -47,7 +47,7 @@ int	init_configuration(t_game *game, char *filename)
 int	setup_game(t_game *game)
 {
 	if (!init_game(game))
-		return (cerrorp("Game initialization failed"));
+		return (cerrorp("Game Initialization Failed"));
 	init_player(game);
 	load_textures(game);
 	return (0);

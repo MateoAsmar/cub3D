@@ -23,7 +23,7 @@ int	fillinfcontent(t_model *m, char *filename)
 	size = getlengthofile(filename);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		return (cerrorp("Could not open file!"));
+		return (cerrorp("Could Not Open File!"));
 	s = get_next_line(fd);
 	m->fcontent = (char **)malloc(sizeof(char *) * (size +1));
 	if (!m->fcontent)
@@ -48,7 +48,7 @@ int	getlengthofile(char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		return (cerrorp("Could not open file!"));
+		return (cerrorp("Could Not Open File!"));
 	count = 0;
 	s = get_next_line(fd);
 	while (s != NULL)
@@ -65,12 +65,12 @@ int	checkmapvalidity(t_model *m)
 {
 	if (m->c != 1 || m->f != 1
 		|| m->ntex != 1 || m->stex != 1 || m->wtex != 1 || m->etex != 1)
-		return (freetab(m->fcontent), cerrorp("Missing config"));
+		return (freetab(m->fcontent), cerrorp("Missing Config"));
 	m->map = extract_map(m->fcontent, m);
 	if (!m->map)
 	{
 		freetab(m->fcontent);
-		return (cerrorp("Invalid map"));
+		return (cerrorp("Invalid Map"));
 	}
 	replace_whitespace_with_wall(m->map);
 	if (check_last_line_character(m->map) == -1
@@ -80,12 +80,12 @@ int	checkmapvalidity(t_model *m)
 		return (-1);
 	}
 	if (checkborders(m) == -1)
-		return (free2tab(m->fcontent, m->map), cerrorp("Invalid borders!"));
+		return (free2tab(m->fcontent, m->map), cerrorp("Invalid Borders!"));
 	maxwidth(m);
 	pad_map_rows(m);
 	if (is_invalid_surrounded(m->map) == -1)
 		return (free2tab(m->fcontent, m->map),
-			cerrorp("Map not surrounded by walls!"));
+			cerrorp("Map Not Surrounded By Walls!"));
 	return (0);
 }
 
@@ -129,7 +129,7 @@ int	check_map_character(char **map)
 				&& map[i][j] != 'W' && map[i][j] != 'E'
 				&& map[i][j] != '\n')
 				return (cerrorp
-					("Invalid characters or Map is not at EOF!"));
+					("Invalid Characters or Map Is Not At EOF!"));
 			j++;
 		}
 		i++;

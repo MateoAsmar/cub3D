@@ -63,7 +63,7 @@ fclean:		clean
 	$(RM) $(NAME)
 #	$(RM) -r mlx_linux
 
-# clone_mlx:
+#clone_mlx:
 # 	@echo "Cloning minilibx-linux..."
 # 	@if [ -d "mlx_linux" ]; then echo "Mlx already imported in the project.";\
 # 		else git clone --quiet https://github.com/42Paris/minilibx-linux.git mlx_linux; fi

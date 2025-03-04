@@ -6,7 +6,7 @@
 /*   By: masmar <masmar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 14:48:38 by masmar            #+#    #+#             */
-/*   Updated: 2025/02/26 15:04:46 by masmar           ###   ########.fr       */
+/*   Updated: 2025/03/01 00:46:11 by masmar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	strafe_left(t_game *game)
 	double	move_y;
 	double	new_x;
 	double	new_y;
-	double	margin;
 
-	margin = 0.02;
 	move_x = -game->player.plane_x * game->player.move_speed;
 	move_y = -game->player.plane_y * game->player.move_speed;
 	new_x = game->player.pos_x + move_x;

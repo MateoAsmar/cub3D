@@ -6,7 +6,7 @@
 /*   By: masmar <masmar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 14:59:48 by masmar            #+#    #+#             */
-/*   Updated: 2025/02/27 16:29:00 by masmar           ###   ########.fr       */
+/*   Updated: 2025/03/01 01:00:06 by masmar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,18 @@ int	getceilingrgb(char *s, t_model *m)
 		line = ft_split(s + 1, ',');
 		size = getsize(line);
 		if (size != 3)
-			return (freetab(line), cerrorp("Floor colors config error!"));
+			return (freetab(line), cerrorp("Floor Colors Config Error!"));
 		if (convertcrgb(line, &m->ceiling) < 0)
 		{
 			freetab(line);
-			return (cerrorp("Ceiling colors config error!"));
+			return (cerrorp("Ceiling Colors Config Error!"));
 		}
 		m->c = 1;
 		freetab(line);
 		return (0);
 	}
 	else
-		return (cerrorp("Ceiling colors config error!"));
+		return (cerrorp("Ceiling Colors Config Error!"));
 }
 
 int	getfloorrgb(char *s, t_model *m)
@@ -61,16 +61,16 @@ int	getfloorrgb(char *s, t_model *m)
 		line = ft_split(s + 1, ',');
 		size = getsize(line);
 		if (size != 3)
-			return (freetab(line), cerrorp("Floor colors config error!"));
+			return (freetab(line), cerrorp("Floor Colors Config Error!"));
 		if (convertfrgb(line, &m->floor) < 0)
 		{
 			freetab(line);
-			return (cerrorp("Floor colors config error!"));
+			return (cerrorp("Floor Colors Config Error!"));
 		}
 		m->f = 1;
 		freetab(line);
 		return (0);
 	}
 	else
-		return (cerrorp("Floor colors config error!"));
+		return (cerrorp("Floor Colors Config Error!"));
 }

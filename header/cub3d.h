@@ -6,7 +6,7 @@
 /*   By: masmar <masmar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:19:59 by fdahouk           #+#    #+#             */
-/*   Updated: 2025/02/28 12:33:53 by masmar           ###   ########.fr       */
+/*   Updated: 2025/03/03 09:41:53 by masmar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,6 @@ typedef struct s_game
 	int			mouse_last_x;
 }	t_game;
 
-// A small struct to group line variables (avoids big local var counts).
 typedef struct s_linevars
 {
 	int	dx;
@@ -156,7 +155,6 @@ typedef struct s_linevars
 	int	y;
 }	t_linevars;
 
-// A struct to group minimap variables (again, to reduce local var count).
 typedef struct s_mmap
 {
 	double	cell_w;
