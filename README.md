@@ -37,4 +37,23 @@ make
 ```
 
 ***To run the project:***
-./cub3D
+```bash
+./cub3D path_to_map.cub
+```
+Replace `path_to_map.cub` with the path to your map configuration file.
+
+## What I Learned
+Working on cub3D was both challenging and highly rewarding. Throughout the project, I deepened my understanding of:
+
+- **Raycasting Algorithm:** Implementing the logic that converts a 2D map into a 3D visual experience.
+
+- **Low-Level Graphics Programming:** Gaining hands-on experience with MLX for rendering and handling real-time updates.
+
+- **Collision Detection:** Developing robust mechanisms to prevent the player from passing through walls.
+
+- **Advanced Input Handling:** Integrating mouse input for smooth camera rotation and enhancing user interaction.
+
+- **Code Optimization & Norm Compliance:** Writing clean, maintainable, and efficient code under strict guidelines.
+
+## Conclusion
+cub3D not only replicates a classic 3D rendering engine but also pushes the boundaries by incorporating advanced bonus features. This project has been instrumental in enhancing my skills in C programming, algorithm optimization, and interactive graphics. It stands as a testament to my ability to solve complex problems while adhering to rigorous coding standards.
